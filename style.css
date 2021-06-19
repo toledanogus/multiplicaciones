@@ -1,0 +1,61 @@
+@font-face {
+    font-family: gus;
+    src: url(AvenirNextLTPro-Regular.otf);
+  }
+
+body {
+    /*background-image: linear-gradient(to right, #ffffff, rgb(254, 250, 255));*/
+    background-color: black;
+    text-align: center;
+}
+h1{
+    display: inline-block;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    font-family: gus;
+}
+#resu, #boton{
+    font-size: x-large;
+}
+input[type="number"] {
+    width: 40px;
+    background-color: rgb(236, 205, 252);
+    border-radius: 8px;
+    color: rgb(31, 31, 31);
+    text-align: center;
+    padding: 5px;
+}
+#boton {
+    border-radius: 8px;
+    background-color: rgb(245, 166, 199);
+    font-family: gus;
+    padding: 12px;
+    font-weight: bold;    
+}
+#boton:active {
+    background-color: rgb(236, 77, 223);
+}
+#puntaje, #puntaje2 {
+    color: rgb(248, 142, 222);
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+#siguiente {
+    border-radius: 8px;
+    background-color: rgb(255, 236, 151);
+    font-family: gus;
+    padding: 12px;
+    font-weight: bold;
+    font-size: x-large;
+}
+#siguiente:disabled {
+    background-color: rgb(187, 187, 187);
+}
+#wrong {
+    margin-bottom: 0px;
+    color: rgb(202, 8, 8);
+}
+#correcto {
+    margin-bottom: 0px;
+    color: rgb(63, 202, 8);
+}
