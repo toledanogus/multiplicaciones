@@ -57,13 +57,13 @@ const calcular = () => {
         let audio = new Audio ('campana.mp3');
         audio.play();
         audio.volume = 0.5;
-        if (pun >= 5) {
+        if (pun >= 25) {
             document.getElementById("siguiente").disabled = false;
             let audio2 = new Audio ("aplausos.mp3");
             audio2.play();
             audio.volume = 0.5;
         }
-        if (pun >= 5 && ran1 == 10) {
+        if (pun >= 25 && ran1 == 10) {
             console.log('Fin');
             let audio = new Audio ('magia.mp3');
             audio.play();

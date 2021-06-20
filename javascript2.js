@@ -42,7 +42,7 @@ let pun = 0;
         let audio = new Audio ('campana.mp3');
         audio.play();
         audio.volume = 0.5;
-        if (pun >= 5) {            
+        if (pun >= 25) {            
             let audio = new Audio ('magia.mp3');
             audio.play();
             audio.volume = 0.5;
