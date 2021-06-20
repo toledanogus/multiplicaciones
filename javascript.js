@@ -29,6 +29,10 @@ const renovar = () => {
     document.getElementById("resu").focus();
     document.querySelector('#puntaje').innerText = pun;
     document.getElementById("siguiente").disabled = true;
+    document.querySelector('#p').innerHTML = ' <img src="nivel2.PNG" alt="Nivel2" srcset="">';
+    setTimeout(function(){ 
+        document.querySelector('img').remove();
+ }, 3000);
 }
 
 
@@ -53,11 +57,15 @@ const calcular = () => {
         let audio = new Audio ('campana.mp3');
         audio.play();
         audio.volume = 0.5;
-        if (pun >= 10) {
+        if (pun >= 30) {
             document.getElementById("siguiente").disabled = false;
             let audio2 = new Audio ("aplausos.mp3");
             audio2.play();
             audio.volume = 0.5;
+        }
+        if (pun >= 30 && ran1 == 10) {
+            console.log('Fin');
+            
         }
     }
     else{
