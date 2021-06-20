@@ -8,7 +8,7 @@ n1.innerText = ran1;
 n2.innerText = ran2;
 document.getElementById("resu").focus();
 let pun = 0;
-
+let error = 0;
 
   function clear_mensaje1() {
     setTimeout(function(){ document.querySelector('#correcto').innerText = '';
@@ -24,11 +24,13 @@ let pun = 0;
 const renovar = () => {
     ran1 = ran1+1;
     pun = 0;
+    error = 0;
     n1.innerText = ran1;
     n2.innerText = ran2;
     document.getElementById("resu").focus();
     document.querySelector('#puntaje').innerText = pun;
     document.getElementById("siguiente").disabled = true;
+    document.querySelector('#error').innerText = error;
     document.querySelector('#p').innerHTML = ' <img src="nivel2.PNG" alt="Nivel2" srcset="">';
     setTimeout(function(){ 
         document.querySelector('img').remove();
@@ -57,6 +59,9 @@ const calcular = () => {
         let audio = new Audio ('campana.mp3');
         audio.play();
         audio.volume = 0.5;
+        //let bar = document.getElementsByTagName('progress')[0].value = document.getElementsByTagName('progress')[0].value + 1;
+        //console.log(bar);
+        
         if (pun >= 25) {
             document.getElementById("siguiente").disabled = false;
             let audio2 = new Audio ("aplausos.mp3");
@@ -65,6 +70,10 @@ const calcular = () => {
         }
         if (pun >= 25 && ran1 == 10) {
             console.log('Fin');
+            document.querySelector('#p').innerHTML = ' <img src="nivel3.PNG" alt="Nivel2" srcset="">';
+            setTimeout(function(){ 
+                document.querySelector('img').remove();
+         }, 4200);
             let audio = new Audio ('magia.mp3');
             audio.play();
             audio.volume = 0.5;
@@ -75,13 +84,22 @@ const calcular = () => {
     }
     else{
         console.log('Incorrecto');
+        error = error+1;
         let audio3 = new Audio ("error.mp3");
         audio3.play();
         audio3.volume = 0.5;
         document.querySelector('#correcto').id = 'wrong';
         document.querySelector('#wrong').innerText = '¡Incorrecto!';
+        document.querySelector('#error').innerText = error;
         clear_mensaje2();
         document.getElementById("resu").focus();    
-    }    
+    }  
+    if (error >= 3) {
+        document.querySelector('#p').innerHTML = ' <img src="intento.PNG" alt="Nivel2" srcset="">';
+            setTimeout(function(){ 
+                document.querySelector('img').remove();
+                location.reload();
+         }, 3000);
+    }  
             }
 

@@ -8,7 +8,7 @@ n1.innerText = ran1;
 n2.innerText = ran2;
 document.getElementById("resu").focus();
 let pun = 0;
-
+let error = 0;
 
   function clear_mensaje1() {
     setTimeout(function(){ document.querySelector('#correcto').innerText = '';
@@ -42,24 +42,37 @@ let pun = 0;
         let audio = new Audio ('campana.mp3');
         audio.play();
         audio.volume = 0.5;
-        if (pun >= 25) {            
+        if (pun >= 25) {   
+            document.querySelector('#p').innerHTML = ' <img src="felicidades.PNG" alt="Nivel2" srcset="">';
+            setTimeout(function(){ 
+              document.querySelector('img').remove();
+       }, 4200);       
             let audio = new Audio ('magia.mp3');
             audio.play();
             audio.volume = 0.5;
             setTimeout(function(){ document.location.href = 'pag3.html';
-            }, 3200);
+            }, 4000);
             
         }
         
     }
     else{
         console.log('Incorrecto');
+        error = error+1;
         let audio3 = new Audio ("error.mp3");
         audio3.play();
         audio3.volume = 0.5;
         document.querySelector('#correcto').id = 'wrong';
         document.querySelector('#wrong').innerText = '¡Incorrecto!';
+        document.querySelector('#error').innerText = error;
         clear_mensaje2();
         document.getElementById("resu").focus();    
-    }    
+    }   
+    if (error >= 3) {
+      document.querySelector('#p').innerHTML = ' <img src="intento.PNG" alt="Nivel2" srcset="">';
+          setTimeout(function(){ 
+              document.querySelector('img').remove();
+              location.reload();
+       }, 3000);
+  }   
             }

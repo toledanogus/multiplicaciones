@@ -5,7 +5,7 @@
 
 body {
     /*background-image: linear-gradient(to right, #ffffff, rgb(254, 250, 255));*/
-    background-color: black;
+    background-color: rgb(38, 0, 48);
     text-align: center;
 }
 h1{
@@ -62,7 +62,19 @@ input[type="number"] {
     color: rgb(63, 202, 8);
 }
 img {
-    margin: auto;
     max-width: 100%;
     height: auto;
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    
+}
+#error, #error2 {
+    margin-top: 0px;
+    margin-bottom: 7px;
+    display: inline-block;
+    color: #FAE0AA;
+    font-family: gus;
 }
