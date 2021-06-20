@@ -20,7 +20,12 @@ let error = 0;
                            document.querySelector('#wrong').id = 'correcto';        
  }, 800);
   }
-
+  document.addEventListener("keydown", event => {
+    if (event.isComposing || event.keyCode !== 13) {
+        return;
+    }
+    calcular();
+    });
   const calcular = () => {
     let resu = document.querySelector('#resu').value;
     let n3 = document.querySelector('#n1').textContent;
