@@ -44,7 +44,7 @@ input[type="number"] {
 }
 #siguiente {
     border-radius: 8px;
-    background-color: rgb(255, 236, 151);
+    background-color: rgb(63, 202, 8);
     font-family: gus;
     padding: 12px;
     font-weight: bold;
@@ -52,6 +52,7 @@ input[type="number"] {
 }
 #siguiente:disabled {
     background-color: rgb(187, 187, 187);
+    border-radius: 8px;
 }
 #wrong {
     margin-bottom: 0px;
@@ -77,4 +78,18 @@ img {
     display: inline-block;
     color: #FAE0AA;
     font-family: gus;
+}
+#nombre {
+    padding: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 35px;
+    width: 180px;
+    border-radius: 5px;
+}
+p, h3 {
+    color: #FAE0AA;
+}
+#titulo {
+    color: rgb(245, 166, 199)
 }

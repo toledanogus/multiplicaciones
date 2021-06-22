@@ -1,6 +1,8 @@
 let n1 = document.querySelector('#n1');
 let n2 = document.querySelector('#n2');
 
+
+
 let ran1 = 1;
 let ran2 = Math.floor(Math.random() * 10) + 1;
 
@@ -107,4 +109,3 @@ const calcular = () => {
          }, 3000);
     }  
             }
-
